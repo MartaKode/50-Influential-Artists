@@ -276,13 +276,28 @@ function removeArtist(artistArray,index){
 
 function get20s(data/* Code here */){
   /* Code here */
-const newArray=[];
+const artistsYears=[];
+const ourArray=[];
+const justNames=[];
 
-for(i=0; i<artists.length; i++)
-if(data>1800)
-return artists[i].years;
+for(i=0; i<data.length; i++){
+  artistsYears.push(artists[i].years);
+
+  const placeHolder= parseInt(artistsYears[i],10);
+  ourArray.push(placeHolder);
+
+  if(ourArray[i]>1799&&ourArray[i]<1901){
+justNames.push(artists[i].name);
+  }
 }
-console.log(get20s(1800));
+
+
+return justNames;
+// return ourArray;
+
+}
+// console.log(get20s(artists));
+
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
 function lotsOfArt(arr/* Code here */){
